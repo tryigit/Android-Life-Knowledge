@@ -18,7 +18,9 @@ The Android kernel is currently reading the battery health information in this f
 /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/
 ```
 > [!IMPORTANT]
-> There is no known benefit or harm in editing this file. Ufs health information is given in the image below.
+> There is no known benefit or harm in editing this file. However, editing is not recommended.
+
+Ufs health information is given in the image below.
 
 ![Storage Healt](https://raw.githubusercontent.com/tryigit/AndroidHealth/main/IMG_20240126_022748_336.jpg)
 
