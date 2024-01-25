@@ -1,8 +1,11 @@
 # Battery Life
 The Android kernel is currently reading the battery health information in this file.
+
+### Battery Value
 ```
 /sys/class/powersupply/battery/charge_full
 ```
+### Charging Cycle
 ```
 /sys/class/powersupply/battery/cycle_count
 ```
