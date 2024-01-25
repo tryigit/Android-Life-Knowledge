@@ -1,4 +1,4 @@
-# Battery Healt Profile
+# Battery Healt
 The Android kernel is currently reading the battery health information in this file.
 ```
 /sys/class/powersupply/battery/charge_full
