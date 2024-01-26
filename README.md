@@ -18,7 +18,7 @@ These files has never been tested and it is not known exactly what it does. For 
 /sys/class/qcom-battery/fg1_soh
 ```
 > [!WARNING]
-> It is possible to edit this file on old Android devices. However, if you exaggerate and enter an incorrect value, your phone may indicate the battery incorrectly and shut down prematurely.
+> It is possible to edit these files on old Android devices. However, if you exaggerate and enter an incorrect value, your phone may indicate the battery incorrectly and shut down prematurely.
 
 # Storage Life
 The Android kernel is currently reading the battery health information in this folder.
