@@ -36,4 +36,4 @@ Ufs health information is given in the image below.
 > Software hardware lifespan data does not represent the actual lifespan. It's just a software profile. Restrictions can be added to prevent the phone from suddenly shutting down and other things.
 
 ## Telegram
-https://t.me/chinacloudgroup
+https://t.me/cleverestech
