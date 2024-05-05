@@ -21,7 +21,7 @@ These files has never been tested and it is not known exactly what it does. For 
 > It is possible to edit these files on old Android devices. However, if you exaggerate and enter an incorrect value, your phone may indicate the battery incorrectly and shut down prematurely.
 
 # Storage Life
-The Android kernel is currently reading the battery health information in this folder.
+The Android kernel is currently reading the storage life information in this folder.
 ```
 /sys/devices/platform/soc/1d84000.ufshc/health_descriptor/
 ```
