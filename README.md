@@ -1,5 +1,5 @@
 # Battery Life
-The Android kernel is currently reading the battery health information in this file.
+The Android kernel is currently reading the battery health information in this file. Usually 40-80% and 20-80% charge cycles keep your battery health percentage high.
 
 ### Battery Value
 ```
