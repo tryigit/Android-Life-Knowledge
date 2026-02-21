@@ -29,8 +29,8 @@ MediaTek has historically lagged behind Qualcomm in open-source contribution, ma
 *   **Support Tier:** Intermediate.
 *   **Impact:** Better than in the past, but still reliant on the vendor's roadmap. Updates often arrive later than their Qualcomm counterparts.
 
-### 3. OEM Custom Silicon (Google Tensor, Samsung Exynos)
-This is where the paradigm shifts. Companies like Google (Tensor) and Samsung (Exynos) control both the silicon design and the operating system integration.
+### 3. OEM Custom Silicon (Google Tensor, Apple)
+This is where the paradigm shifts. Companies like Google (Tensor) and Apple control both the silicon design and the operating system integration.
 *   **Support Tier:** Full / Extended (7+ Years).
 *   **Impact:** Because Google owns the Tensor chip, they can decide to write new drivers for it 6 years later. This allows the Pixel 8 series, for example, to promise 7 years of OS updates that include *actual* kernel version bumps, keeping the device secure and performant at a hardware level.
 
