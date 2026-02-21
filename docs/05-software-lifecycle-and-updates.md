@@ -1,4 +1,7 @@
-# Chip Lifecycle & The "Update" Illusion
+# Software Lifecycle & The "Update" Illusion
+
+> [!NOTE]
+> This document discusses the **software** support window (OS updates, security patches). For physical hardware degradation (silicon aging, electromigration), please see [docs/06-silicon-aging-and-hardware-failure.md](./06-silicon-aging-and-hardware-failure.md).
 
 A common misconception in the Android ecosystem is that a "System Update" renews the entire software stack. In reality, for most devices, an Android version upgrade (e.g., Android 13 to 14) is merely a facelift for the upper application layers, while the foundation—the kernel and hardware drivers—remains frozen in time.
 

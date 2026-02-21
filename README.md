@@ -30,10 +30,15 @@ Explore the detailed technical breakdowns below:
 >
 > Understanding JEDEC health descriptors, interpreting `life_time_est` values, and monitoring pre-EOL status.
 
-### 5. [Chip Lifecycle & The "Update" Illusion](./docs/05-chip-lifecycle-and-updates.md)
+### 5. [Software Lifecycle & The "Update" Illusion](./docs/05-software-lifecycle-and-updates.md)
 > *Why your "Android 14" update is still running a 2020 kernel.*
 >
 > An analysis of vendor support tiers (Qualcomm vs. MediaTek vs. Custom Silicon), the difficulty of upgrading drivers, and the "Frankenstein" nature of Android updates.
+
+### 6. [Silicon Aging & Hardware Failure](./docs/06-silicon-aging-and-hardware-failure.md)
+> *Why chips eventually die, not just slow down.*
+>
+> Understanding electromigration, thermal fatigue, and why avoiding heat is the only true way to extend hardware life.
 
 ---
 
