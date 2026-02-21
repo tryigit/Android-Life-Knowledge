@@ -12,13 +12,22 @@ In previous versions, the OS "guessed" health based on charge cycles and current
 2.  **BatteryManager APIs:** New methods added to `BatteryManager` that expose the HAL data to applications.
 3.  **Fuel Gauge IC:** The physical chip responsible for monitoring the cell.
 
-## Android 15 Implementation
+## Android 15+ & Box-Ready Standards
 
-Android 15 mandates stricter adherence to these HAL definitions for Google Mobile Services (GMS) certification. This means OEMs must implement the drivers to correctly report:
+For devices launching with Android 15 (API Level 35) out-of-the-box, Google has tightened the requirements for GMS certification. It is no longer optional for OEMs to support these standard HAL definitions; it is a mandatory requirement for the "Box-Ready" experience.
 
-*   **Cycle Count:** The total number of charge/discharge cycles as recorded by the fuel gauge's non-volatile memory.
-*   **State of Health (SoH):** A percentage value calculated by the fuel gauge's proprietary algorithm (e.g., Coulomb Counting + Impedance Tracking).
-*   **Manufacturing Date:** The date the battery cell was produced, read from the battery's EEPROM if available.
+### The "Box-Ready" Requirement
+
+If a device ships with Android 15+, it **must** expose the following battery health properties through the standard Android framework:
+
+1.  **Cycle Count:** The total number of charge/discharge cycles as recorded by the fuel gauge's non-volatile memory.
+2.  **State of Health (SoH):** A percentage value calculated by the fuel gauge's proprietary algorithm (e.g., Coulomb Counting + Impedance Tracking).
+3.  **Manufacturing Date:** The date the battery cell was produced, read from the battery's EEPROM if available.
+
+Legacy methods (like parsing proprietary `sysfs` nodes) are strongly discouraged and, in some cases, blocked by stricter SELinux policies on newer kernels. Developers and users should rely exclusively on the `BatteryManager` API for these devices.
+
+> [!TIP]
+> If you are developing a battery health app for Android 15+ devices, do not waste time building parsers for `/sys/class/power_supply/`. Use the official APIs.
 
 ### Code Example: Accessing Modern Health Data
 
