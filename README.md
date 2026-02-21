@@ -4,7 +4,7 @@
 
 ---
 
-This repository documents the architectural shift in how the Android operating system monitors, reports, and secures hardware health metrics—covering battery subsystems, storage (UFS), and silicon longevity. It serves as a bridge between legacy estimation methods and modern hardware abstraction layers.
+This repository documents the architectural shift in how the Android operating system monitors, reports, and secures hardware health metrics covering battery subsystems, storage (UFS), and silicon longevity. It serves as a bridge between legacy estimation methods and modern hardware abstraction layers.
 
 ## Documentation Index
 
