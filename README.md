@@ -1,39 +1,39 @@
-# Battery Life
-The Android kernel is currently reading the battery health information in this file. Usually 40-80% and 20-80% charge cycles keep your battery health percentage high.
+# Android Life Knowledge
 
-### Battery Value
-```
-/sys/class/powersupply/battery/charge_full
-```
-### Charging Cycle
-```
-/sys/class/powersupply/battery/cycle_count
-```
-### Qualcomm Battery Life (Found)
-These files has never been tested and it is not known exactly what it does. For example, it may affect cpu/gpu performance 💀
-```
-/sys/class/qcom-battery/soh
-```
-```
-/sys/class/qcom-battery/fg1_soh
-```
-> [!WARNING]
-> It is possible to edit these files on old Android devices. However, if you exaggerate and enter an incorrect value, your phone may indicate the battery incorrectly and shut down prematurely.
+**The definitive technical resource for Android hardware health, system metrics, and lifecycle evolution.**
 
-# Storage Life
-The Android kernel is currently reading the storage life information in this folder.
-```
-/sys/devices/platform/soc/1d84000.ufshc/health_descriptor/
-```
-> [!IMPORTANT]
-> There is no known benefit or harm in editing this file. However, editing is not recommended.
+---
 
-Ufs health information is given in the image below.
+This repository documents the architectural shift in how the Android operating system monitors, reports, and secures hardware health metrics—specifically focusing on battery subsystems. It serves as a bridge between legacy estimation methods and modern hardware abstraction layers.
 
-![Storage Healt](https://raw.githubusercontent.com/tryigit/AndroidHealth/main/IMG_20240126_022748_336.jpg)
+## Documentation Index
 
-> [!TIP]
-> Software hardware lifespan data does not represent the actual lifespan. It's just a software profile. Restrictions can be added to prevent the phone from suddenly shutting down and other things.
+Explore the detailed technical breakdowns below:
 
-## Telegram
-https://t.me/cleverestech
+### 1. [Legacy Methods & The PowerProfile Hack](./docs/01-legacy-methods-and-hacks.md)
+> *Why the old `getBatteryCapacity()` method was never accurate.*
+>
+> Learn about the historical reliance on `power_profile.xml`, the flawed math behind user-space estimation apps, and why these methods are now considered obsolete anti-patterns.
+
+### 2. [Modern Health HAL (Android 14+)](./docs/02-modern-health-hal.md)
+> *The new standard: Asking the hardware directly.*
+>
+> A deep dive into the Android 14/15 Health HAL (AIDL), direct PMIC communication, and how the OS retrieves trusted data like Cycle Count and Production Date.
+
+### 3. [Root, Sysfs & Hardware Security](./docs/03-root-and-hardware-security.md)
+> *The limits of software control.*
+>
+> An analysis of the `/sys/class/power_supply` interface and the hardware-level security mechanisms (Fuel Gauge ICs, ROM/OTP memory) that prevent data spoofing even on rooted devices.
+
+---
+
+## Vision
+
+As Android matures, the gap between "software estimation" and "hardware reality" is closing. This project aims to:
+*   Debunk myths surrounding battery calibration and health "resets".
+*   Provide accurate, engineering-level explanations of system behaviors.
+*   Guide developers toward using the correct, modern APIs (`BatteryManager` properties) instead of deprecated hacks.
+
+## Contributing
+
+Corrections and technical additions are welcome. Please ensure all contributions are backed by AOSP source code references or hardware datasheets.
