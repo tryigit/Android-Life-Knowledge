@@ -40,4 +40,14 @@ To genuinely reset a battery's health stats, you would need to:
 1.  Physically replace the battery cell (which has a new, uncalibrated controller or fresh chemistry).
 2.  Use specialized hardware tools (I2C/SMBus programmers) to interface directly with the Fuel Gauge chip and reset its registers (if not password protected).
 
+## Manual Calibration (Fuel Gauge Learning)
+
+If the reported battery percentage drifts from reality (e.g., the device shuts down at 15%), you can force the Fuel Gauge to relearn the battery's absolute limits (0% and 100%). This is not a "reset" of health, but a synchronization of the reported capacity with the physical voltage.
+
+1.  **Discharge to Cut-off:** Use the phone until it reaches 0% and powers off automatically.
+2.  **Verify Empty State:** Try to turn the phone on again. If it boots and immediately shuts down, the battery has truly reached its low-voltage cut-off point.
+3.  **Charge While Off:** Connect the device to an original, high-quality charger while it remains powered off.
+4.  **Continuous Charge:** Charge without interruption until the indicator shows 100%.
+5.  **Trickle Charge (Saturation):** Do not unplug immediately. Leave the device connected for an additional 1-2 hours. This ensures the "trickle charge" phase completes and allows the Fuel Gauge to register the precise saturation voltage (Term Taper Current).
+
 **Conclusion:** The battery health data seen in Android 14+ APIs is trustworthy because it is rooted in physical hardware measurements that are resilient to software-level manipulation.
